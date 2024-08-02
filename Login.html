@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>LoginPage</title>
+        <script>
+            function loginValidation(){
+                var uname=document.myform.username.value;
+                var pass=document.myform.password.value;
+                 var pattern=/^[a-zA-Z0-9_-]{3,16}$/;
+                 if(uname==null|| uname=="")
+                 {
+                    alert("name cant't be blank")
+                    return false;
+                 }
+                 if(!pattern.test(uname))
+                 {
+                   alert("Username can only contain letters,numbers,underscore, and must be between 3 and 16 characters long")
+                   return false;
+                 }
+                 if(uname.length<10)
+                 {
+                    alert("username must be at least 10 characters")
+                    return false;
+                 }
+                 else if(pass.length!=10 ){
+                    alert("Password must be atleast 10 letters")
+                    return false;
+                 }
+               return true;
+            }
+        </script>
+        <link rel="stylesheet" href="Mystyles1.css">
+        <style>
+         body{
+            background-color: black;
+             height:20px;
+             opacity:blur(0.5px)
+         }
+           section{
+            background-image: url(signbg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-style:solid;
+            padding:20px;
+            color:white;
+           }
+           footer{
+            margin-top:350px;
+           }
+           font{
+            color:white;
+           }
+        </style>
+        
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="Home.html">Home   </a></li>
+        <li><a href="About.html">About   </a></li>
+        <li><a href="Contact.html">Contact   </a></li>
+        <li><a href="Signin.html">Signin   </a></li>
+        <li><a href="Login.html">Login   </a></li>
+    </ul>
+</nav> 
+        <center>
+        <section>
+        <h2>Login form</h2><br>
+        <form name="myform" action="finalpage.html" onsubmit=" return loginValidation(this)">
+            UserName:<input type="text" name="username"><br>
+            Password:<input type="password" name="password"><br>
+            <input type="submit">
+            </form>
+        </section><br>
+        <font size="6px">"Please login to access our collection of delicious millet recipes with step-by-step instructions."</font>
+        <footer>
+            <p>&copy; 2024 MyCompany. All rights reserved.</p>
+         </footer></center>
+</body>
+</html>
